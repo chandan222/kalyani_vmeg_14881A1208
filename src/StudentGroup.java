@@ -232,13 +232,42 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getByBirthDate(Date date) {
 		// Add your implementation here
-		return null;
+		if(date==null)
+			throw new IllegalArgumentException();
+		else{
+			ArrayList<Student> al=new ArrayList<Student>();
+			for(int i=0;i<students.length;i++){
+				if((students[i].getBirthDate()).before(date)){
+					al.add(students[i]);
+				}
+			
+			}
+		Student[] students1 = new Student[al.size()];
+		students1=al.toArray(students1);
+		return students1;
+		}
 	}
 
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
 		// Add your implementation here
-		return null;
+		if(firstDate==null)
+			throw new IllegalArgumentException();
+		else if(lastDate==null)
+			throw new IllegalArgumentException();
+		else{
+			ArrayList<Student> al=new ArrayList<Student>();
+			for(int i=0;i<students.length;i++){
+				if((students[i].getBirthDate()).before(lastDate)&&(students[i].getBirthDate()).after(lastDate)){
+					al.add(students[i]);
+				}
+			
+			}
+		Student[] students1 = new Student[al.size()];
+		students1=al.toArray(students1);
+		return students1;
+		}
+		
 	}
 
 	@Override
