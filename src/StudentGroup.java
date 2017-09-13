@@ -237,7 +237,7 @@ public class StudentGroup implements StudentArrayOperation {
 		else{
 			ArrayList<Student> al=new ArrayList<Student>();
 			for(int i=0;i<students.length;i++){
-				if((students[i].getBirthDate()).before(date)){
+				if((students[i].getBirthDate()).before(date)||(students[i].getBirthDate()).equals(date)){
 					al.add(students[i]);
 				}
 			
@@ -258,7 +258,7 @@ public class StudentGroup implements StudentArrayOperation {
 		else{
 			ArrayList<Student> al=new ArrayList<Student>();
 			for(int i=0;i<students.length;i++){
-				if((students[i].getBirthDate()).before(lastDate)&&(students[i].getBirthDate()).after(lastDate)){
+				if(((students[i].getBirthDate()).before(lastDate)&&(students[i].getBirthDate()).after(lastDate))){
 					al.add(students[i]);
 				}
 			
