@@ -195,6 +195,22 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void removeToElement(Student student) {
 		// Add your implementation here
+		if(student==null)
+			throw new IllegalArgumentException();
+		else{
+			int j=0;
+			for(int i=0;i<students.length;i++){
+				if(student.equals(students[i]))
+					j=i;
+			}
+			ArrayList<Student> al=new ArrayList<Student>();
+			for(int i=j;i<students.length;i++){
+				al.add(students[i]);
+			}
+			StudentGroup s=new StudentGroup((students.length-j)+1);
+			students=al.toArray(students);
+			
+		}
 		
 	}
 
@@ -231,15 +247,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudentsByAge(int age) {
 		// Add your implementation here
-	/*	ArrayList<Student> al=new ArrayList<Student>();
-		for(int i=0;i<students.length;i++){
-			if(students[i].age==age)
-				al.add(students[i]);
-		}
-		Student[] students1 = new Student[al.size()];
-		students1=al.toArray(students1);
-		return students1;*/
 		return students;
+		
 	}
 
 	@Override
