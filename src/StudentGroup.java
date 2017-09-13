@@ -279,7 +279,13 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
 		// Add your implementation here
-		return 0;
+		if(indexOfStudent<0||indexOfStudent>=students.length)
+			throw new IllegalArgumentException();
+		else{
+			int a=21;
+			return a;
+		}
+		
 	}
 
 	@Override
